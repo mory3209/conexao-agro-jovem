@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro enviado | Associação Conexão Agro Jovem</title>
+  <meta name="description" content="Confirmação de cadastro enviado para a Associação Conexão Agro Jovem." />
+  <style>
+    :root {
+      --verde-950:#172519;
+      --verde-900:#233823;
+      --verde-800:#2f4d31;
+      --dourado-700:#8b6630;
+      --dourado-500:#c19a59;
+      --dourado-300:#dfc284;
+      --creme-50:#fffaf0;
+      --creme-100:#f8efd9;
+      --texto:#263228;
+      --muted:#64705e;
+      --sombra:0 24px 80px rgba(31,44,29,.18);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin:0;
+      min-height:100vh;
+      display:grid;
+      place-items:center;
+      padding:28px;
+      font-family: Arial, sans-serif;
+      color:var(--texto);
+      background:
+        radial-gradient(circle at 18% 12%, rgba(193,154,89,.25), transparent 34%),
+        radial-gradient(circle at 88% 18%, rgba(47,77,49,.18), transparent 34%),
+        linear-gradient(180deg, var(--creme-50), var(--creme-100));
+    }
+    .card {
+      width:min(760px, 100%);
+      background:rgba(255,255,255,.82);
+      border:1px solid rgba(169,130,69,.28);
+      border-radius:32px;
+      box-shadow:var(--sombra);
+      overflow:hidden;
+    }
+    .top {
+      padding:34px;
+      color:#fff;
+      background:linear-gradient(135deg, var(--verde-800), var(--verde-950));
+      position:relative;
+    }
+    .top::after {
+      content:"";
+      position:absolute;
+      width:190px;
+      height:190px;
+      border-radius:50%;
+      right:-80px;
+      top:-80px;
+      background:rgba(223,194,132,.18);
+    }
+    .badge {
+      width:72px;
+      height:72px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, var(--dourado-300), var(--dourado-500));
+      color:var(--verde-950);
+      font-size:2rem;
+      font-weight:900;
+      margin-bottom:18px;
+      box-shadow:0 16px 32px rgba(0,0,0,.20);
+      position:relative;
+      z-index:1;
+    }
+    h1 {
+      margin:0;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size:clamp(2.2rem, 6vw, 4rem);
+      line-height:.96;
+      letter-spacing:-.04em;
+      position:relative;
+      z-index:1;
+    }
+    .top p { margin:14px 0 0; color:rgba(255,255,255,.82); font-size:1.08rem; max-width:620px; position:relative; z-index:1; }
+    .content { padding:30px 34px 34px; }
+    .message {
+      padding:18px;
+      border-radius:20px;
+      background:rgba(47,77,49,.08);
+      border:1px solid rgba(47,77,49,.14);
+      color:var(--muted);
+      line-height:1.65;
+      margin-bottom:22px;
+    }
+    .message strong { color:var(--verde-900); }
+    .next {
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:12px;
+      margin:22px 0;
+    }
+    .item {
+      padding:16px;
+      border-radius:18px;
+      background:var(--creme-50);
+      border:1px solid rgba(169,130,69,.20);
+    }
+    .item strong { display:block; color:var(--verde-900); margin-bottom:5px; }
+    .item span { color:var(--muted); font-size:.94rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+    .btn {
+      border:0;
+      border-radius:999px;
+      padding:13px 18px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      font-weight:900;
+      text-decoration:none;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-primary { color:#fff; background:linear-gradient(135deg, var(--verde-800), var(--verde-950)); }
+    .btn-gold { color:var(--verde-950); background:linear-gradient(135deg, var(--dourado-300), var(--dourado-500)); }
+    .btn-whats { color:#fff; background:linear-gradient(135deg, #22c55e, #128c4a); }
+    .small { margin-top:18px; color:var(--muted); font-size:.9rem; }
+    @media (max-width:680px) {
+      body { padding:16px; }
+      .top, .content { padding:24px; }
+      .next { grid-template-columns:1fr; }
+      .actions .btn { width:100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card" aria-labelledby="titulo">
+    <section class="top">
+      <div class="badge">✓</div>
+      <h1 id="titulo">Cadastro enviado com sucesso</h1>
+      <p>Recebemos as informações e encaminhamos para o e-mail oficial da Associação Conexão Agro Jovem.</p>
+    </section>
+    <section class="content">
+      <div class="message" id="confirmMessage">
+        <strong>Obrigado pelo seu interesse!</strong><br>
+        A associação entrará em contato quando houver novos encaminhamentos, reuniões ou etapas de organização.
+      </div>
+
+      <div class="next" aria-label="Próximos passos">
+        <div class="item"><strong>1. Conferência</strong><span>A equipe confere os dados enviados pelo formulário.</span></div>
+        <div class="item"><strong>2. Organização</strong><span>As informações ajudam no cadastro de interessados.</span></div>
+        <div class="item"><strong>3. Contato</strong><span>Você poderá receber informações sobre reuniões e projetos.</span></div>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="index.html">Voltar ao site</a>
+        <a class="btn btn-gold" href="index.html#participar">Cadastrar outra pessoa</a>
+        <a class="btn btn-whats" id="confirmWhatsApp" href="https://api.whatsapp.com/send?phone=5599984395082&text=Ol%C3%A1%21%20Enviei%20meu%20cadastro%20pelo%20site%20da%20Associa%C3%A7%C3%A3o%20Conex%C3%A3o%20Agro%20Jovem%20e%20gostaria%20de%20tirar%20d%C3%BAvidas%20com%20a%20secretaria." target="_blank" rel="noopener">Falar com a Secretaria</a>
+      </div>
+      <p class="small">Se você não receber retorno, verifique os canais oficiais da associação ou utilize o botão de contato.</p>
+    </section>
+  </main>
+
+  <script>
+    const CONTACT_WHATSAPP_NUMBER = "5599984395082"; // Secretaria da associação: 99 98439-5082.
+    const CONTACT_WHATSAPP_MESSAGE = "Olá! Enviei meu cadastro pelo site da Associação Conexão Agro Jovem e gostaria de tirar dúvidas com a secretaria.";
+
+    try {
+      const nome = sessionStorage.getItem('conexaoAgroJovemUltimoNome');
+      if (nome) {
+        document.getElementById('confirmMessage').innerHTML = '<strong>Obrigado, ' + nome.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '!</strong><br>Seu cadastro foi enviado com sucesso para o e-mail oficial da associação. Em breve a equipe poderá entrar em contato.';
+      }
+    } catch (error) {}
+
+    const button = document.getElementById('confirmWhatsApp');
+    const cleaned = CONTACT_WHATSAPP_NUMBER.replace(/\D/g, '');
+    if (cleaned) {
+      button.href = 'https://api.whatsapp.com/send?phone=' + cleaned + '&text=' + encodeURIComponent(CONTACT_WHATSAPP_MESSAGE);
+      button.target = '_blank';
+      button.rel = 'noopener';
+    } else {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+        alert('WhatsApp oficial ainda não configurado. Informe o número oficial para ativar este botão.');
+        window.location.href = 'index.html#contato';
+      });
+    }
+  </script>
+</body>
+</html>
