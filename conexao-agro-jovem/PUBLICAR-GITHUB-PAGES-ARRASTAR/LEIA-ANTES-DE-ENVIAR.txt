@@ -1,0 +1,20 @@
+COMO PUBLICAR NO GITHUB PAGES
+
+1. Extraia este ZIP no seu computador.
+2. Abra a pasta extraida PUBLICAR-GITHUB-PAGES-ARRASTAR.
+3. Selecione TODOS os arquivos e pastas que aparecem dentro dela:
+   - index.html
+   - confirmacao.html
+   - 404.html
+   - .nojekyll
+   - README.md
+   - GITHUB-PAGES-PUBLICACAO.md
+   - assets
+4. Arraste esses arquivos para a tela Upload files do GitHub.
+
+IMPORTANTE:
+Nao arraste a pasta PUBLICAR-GITHUB-PAGES-ARRASTAR inteira.
+O arquivo index.html precisa ficar na tela principal do repositorio, junto com a pasta assets.
+
+Depois de enviar, acesse:
+https://mory3209.github.io/conexao-agro-jovem/
